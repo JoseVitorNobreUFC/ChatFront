@@ -5,7 +5,6 @@ import { MessageBot, Message } from "./../components/message/message";
 import { Bottom } from "./../components/bottom/bottom";
 import "./../components/chat/Chat.css";
 import "./../App.css";
-import { Link } from "react-router-dom";
 
 interface MessageType {
     type: "bot" | "user";
@@ -45,6 +44,7 @@ const MainPage: React.FC = () => {
     }, [messages]);
 
     const handleSaibaMais = () => {
+        // @ts-ignore comment
         document.getElementsByClassName("saiba-mais")[0].style.color = 'purple';
         const saibaMaisMessages: MessageType[] = [
             {
@@ -147,7 +147,7 @@ const MainPage: React.FC = () => {
         setMessages((prevMessages) => [...prevMessages, loadingMessage]);
 
         try {
-            const response = await axios.post("http://localhost:3001/classify", { text: texto });
+            const response = await axios.post("https://back-end-chat-production-9b90.up.railway.app/predict", { text: texto });
             const prediction = response.data.result;
 
             const message: JSX.Element =
@@ -199,6 +199,7 @@ const MainPage: React.FC = () => {
             await handleTypingEffect(message);
         } catch (err) {
             console.error("Erro no React:", err);
+            console.error("Text value:", text);
             await handleTypingEffect(<>Ocorreu um erro ao tentar classificar a notícia. Tente novamente mais tarde.</>);
         } finally {
             console.log(messages)
