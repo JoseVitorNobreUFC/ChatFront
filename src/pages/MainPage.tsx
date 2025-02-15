@@ -15,6 +15,7 @@ const MainPage: React.FC = () => {
     const [text, setText] = useState<string>("");
     const [messages, setMessages] = useState<MessageType[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [isFirstMessage, setIsFirstMessage] = useState<boolean>(true);
 
     const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
@@ -150,7 +151,7 @@ const MainPage: React.FC = () => {
             const response = await axios.post("https://back-end-chat-production-9b90.up.railway.app/predict", { text: texto });
             const prediction = response.data.result;
 
-            const message: JSX.Element =
+            const messageWithSource: JSX.Element =
                 prediction === 0 ? (
                     <>
                         Ei rapaz, fica esperto! Meu modelo apontou que a notícia enviada é falsa. Mas não tome minha resposta como verdade absoluta
@@ -196,7 +197,28 @@ const MainPage: React.FC = () => {
                     </>
                 );
 
-            await handleTypingEffect(message);
+            const messageWithoutSource: JSX.Element = 
+                prediction === 0 ? (
+                    <>
+                        Ei rapaz, fica esperto! Meu modelo apontou que a notícia enviada é falsa. Mas não tome minha resposta como verdade absoluta
+                        não hein?! Sempre verifique suas informações em agências de checagem de fatos confiáveis, como as que eu disse antes
+                    </>
+                ) : (
+                    <>
+                        Rapaz a notícia enviada pode ser verdadeira viu? Meu modelo não apontou como falsa. Mas, eu não sou
+                        dono da razão não hein?! Sempre verifique suas informações em agências de checagem de fatos confiáveis, 
+                        como as que eu disse antes
+                    </>
+                );
+
+            if (isFirstMessage) {
+                await handleTypingEffect(messageWithSource);
+                setIsFirstMessage(false);  // Marcar que a primeira mensagem já foi enviada
+            } else {
+                await handleTypingEffect(messageWithoutSource);
+            }
+
+            // await handleTypingEffect(message);
         } catch (err) {
             console.error("Erro no React:", err);
             console.error("Text value:", text);
