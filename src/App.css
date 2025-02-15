@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #575757bd;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  color: black;
+}
+
+.container {
+  width: 80vw;
+  height: 80vh;
+  background-color: rgb(240, 231, 231);
+  backdrop-filter: blur(15px) saturate(180%);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  display: flex;
+  white-space: normal;
+  word-break: normal;
+  hyphens: auto;
+  /* Allow breaks anywhere if needed, but prefer natural breaks */
+  overflow-wrap: anywhere;
+}
+
+.loader {
+  width: 30px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
+  background: 
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
+}
+
+.saiba-mais {
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+}
