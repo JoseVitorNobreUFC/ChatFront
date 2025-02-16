@@ -195,12 +195,20 @@
 }
 
 @media(max-width: 406px) {
+  .chat {
+    margin-top: 10%;
+  }
+  
   .body {
     padding: 10px 20px 170px 20px !important;
   }
 }
 
 @media (max-width: 624px) {
+  .chat {
+    margin-top: 10%;
+  }
+  
   .bottom {
     padding: 10px;
     display: flex;
