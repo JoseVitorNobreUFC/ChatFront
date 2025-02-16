@@ -3,7 +3,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
 
   .top {
     display: flex;
@@ -44,12 +43,15 @@
   .body {
     padding: 20px;
     padding-bottom: 100px;
-    flex: 1;
-    overflow: scroll;
     display: flex;
     flex-direction: column;
     gap: 20px;
     overflow-x: hidden;
+    flex: 1; /* Permite que o body cresça e ocupe o espaço restante */
+    overflow-y: auto; /* Habilita scroll apenas no eixo Y */
+    overflow-x: hidden; /* Evita que o texto saia lateralmente */
+    max-height: 70vh; /* Define um limite para evitar que ultrapasse a tela */
+    word-wrap: break-word; /* Garante que palavras longas quebrem */
 
     .message {
       max-width: 70%;
@@ -194,21 +196,8 @@
 
 }
 
-@media(max-width: 406px) {
-  .chat {
-    margin-top: 10%;
-  }
-  
-  .body {
-    padding: 10px 20px 170px 20px !important;
-  }
-}
 
 @media (max-width: 624px) {
-  .chat {
-    margin-top: 10%;
-  }
-  
   .bottom {
     padding: 10px;
     display: flex;
@@ -216,7 +205,7 @@
   }
 
   .body {
-    padding: 10px 20px 150px 20px;
+    padding: 10px 20px 150px 20px !important;
     .message {
       max-width: 100%;
       font-size: .95rem;
