@@ -194,11 +194,13 @@
 
 }
 
-@media (max-width: 624px) {
-  body {
-    margin-top: 10%;
+@media(max-width: 406px) {
+  .body {
+    padding: 10px 20px 170px 20px !important;
   }
+}
 
+@media (max-width: 624px) {
   .bottom {
     padding: 10px;
     display: flex;
@@ -244,3 +246,4 @@
     text-align: center;
   }
 }
+
