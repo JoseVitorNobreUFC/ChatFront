@@ -17,23 +17,25 @@ export const Bottom: React.FC<BottomProps> = ({ handleSubmit, isLoading }) => {
                         setText("");
                     }}
                 >
-                    <label>Escreva a notícia aqui:</label>
-                    <textarea
-                        placeholder="Digite aqui a notícia pra gente verificar pra você!"
-                        id="text"
-                        name="text"
-                        value={text}
-                        disabled={isLoading}
-                        onKeyDown={(e) => {
-                            if (e.key === "Enter" && !e.shiftKey) {
-                                e.preventDefault();
-                                handleSubmit(e, text);
-                                setText("");
-                            }
-                        }}
-                        className="chatInput"
-                        onChange={(e) => setText(e.target.value)}
-                    />
+                    <div className="form-group">
+                        <label>Escreva a notícia aqui:</label>
+                        <textarea
+                            placeholder="Digite aqui a notícia pra gente verificar pra você!"
+                            id="text"
+                            name="text"
+                            value={text}
+                            disabled={isLoading}
+                            onKeyDown={(e) => {
+                                if (e.key === "Enter" && !e.shiftKey) {
+                                    e.preventDefault();
+                                    handleSubmit(e, text);
+                                    setText("");
+                                }
+                            }}
+                            className="chatInput"
+                            onChange={(e) => setText(e.target.value)}
+                        />
+                    </div>
                     <br />
                     <button type="submit" className="sendButton" disabled={isLoading}
                         style={{
