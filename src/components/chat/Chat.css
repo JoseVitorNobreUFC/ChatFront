@@ -213,13 +213,19 @@
       width: 100%;
     }
 
+    .form-container .chatInput {
+      width: 100%;
+      font-size: .65rem;
+    }
+
     .form-group {
       display: flex;
       gap: 5px;
     }
 
     .form-container label {
-      font-size: 0.85rem;
+      font-size: .65rem;
+      width: 25%;
     }
 
     .form-container .sendButton {
@@ -227,6 +233,4 @@
       text-align: center;
     }
   }
-
-
 }
