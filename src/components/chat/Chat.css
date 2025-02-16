@@ -192,50 +192,55 @@
 
   }
 
-  @media (max-width: 624px) {
-    .bottom {
-      padding: 10px;
-      display: flex;
-      position: fixed;
-    }
+}
 
-    .body {
-      padding: 10px 20px 150px 20px;
-      .message {
-        max-width: 100%;
-        font-size: .95rem;
-        gap: 10px;
-      }
-    }
+@media (max-width: 624px) {
+  body {
+    margin-top: 2%;
+  }
 
-    .form-container {
-      flex-direction: column;
-    }
+  .bottom {
+    padding: 10px;
+    display: flex;
+    position: fixed;
+  }
 
-    .form-container form {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
+  .body {
+    padding: 10px 20px 150px 20px;
+    .message {
+      max-width: 100%;
+      font-size: .95rem;
+      gap: 10px;
     }
+  }
 
-    .form-container .chatInput {
-      width: 100%;
-      font-size: .90rem;
-    }
+  .form-container {
+    flex-direction: column;
+  }
 
-    .form-group {
-      display: flex;
-      gap: 5px;
-    }
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 
-    .form-container label {
-      font-size: .72rem;
-      width: 25%;
-    }
+  .form-container .chatInput {
+    width: 100%;
+    font-size: .90rem;
+  }
 
-    .form-container .sendButton {
-      width: 100%;
-      text-align: center;
-    }
+  .form-group {
+    display: flex;
+    gap: 5px;
+  }
+
+  .form-container label {
+    font-size: .72rem;
+    width: 25%;
+  }
+
+  .form-container .sendButton {
+    width: 100%;
+    text-align: center;
   }
 }
