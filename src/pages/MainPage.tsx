@@ -29,7 +29,7 @@ const MainPage: React.FC = () => {
                 type: "bot",
                 text: (
                     <>
-                        Eaí macho! sou o ZéMentira e estou aqui para te ajudar a ver se aquela notícia do seu amigo é verdade mesmo. Mande aí o texto da notícia! 
+                        Eaí! Sou o ZéMentira e estou aqui para te ajudar a ver se aquela notícia do seu amigo é verdade mesmo. Mande aí o texto da notícia! 
                         Para saber melhor como que eu funciono, clica aqui{" "}
                         <a onClick={handleSaibaMais} target="blank" className="saiba-mais">Saiba mais</a>.
                     </>
@@ -60,8 +60,8 @@ const MainPage: React.FC = () => {
                 type: "bot",
                 text: (
                     <>
-                        Para que eu consiga te responder melhor, use mensagens sem ponto de interrogação. Por exemplo, ao invés de escrever 'o céu é azul?' escreva 'o céu é azul', que eu entendo melhor! Mas ei, eu tô limitado a questões relacionadas a política brasileira, então se for perguntar de futebol eu não vou responder direito hein?!
-                        Ah, e eu trabalho apenas com textos tá? Nada de mandar imagens, vídeos ou links pra mim!
+                        Por favor, use mensagens sem ponto de interrogação. Por exemplo, ao invés de escrever 'o céu é azul?' escreva 'o céu é azul', que eu entendo melhor! Mas ei, por enquanto só vale falar sobre política brasileira hein?!
+                        Ah, eu não sei trbalhar com imagens, vídeos ou links pra mim, por hora é só texto mesmo!
                     </>
                 ),
             },
@@ -154,8 +154,7 @@ const MainPage: React.FC = () => {
             const messageWithSource: JSX.Element =
                 prediction === 0 ? (
                     <>
-                        Ei rapaz, fica esperto! Meu modelo apontou que a notícia enviada é falsa. Mas não tome minha resposta como verdade absoluta
-                        não hein?! Sempre verifique suas informações em agências de checagem de fatos confiáveis, como {" "}
+                        Ei, Abre o olho! Meu modelo apontou que a notícia enviada é falsa. Mas, sempre verifique suas informações em agências de checagem de fatos confiáveis, como {" "}
                         <a href="https://www.aosfatos.org/" target="_blank" rel="noopener noreferrer">
                             Agência aos Fatos
                         </a>, {" "}
@@ -175,8 +174,7 @@ const MainPage: React.FC = () => {
                     </>
                 ) : (
                     <>
-                        Rapaz a notícia enviada pode ser verdadeira viu? Meu modelo não apontou como falsa. Mas, eu não sou
-                        dono da razão não hein?! Sempre verifique suas informações em agências de checagem
+                        A notícia enviada pode ser verdadeira viu? Meu modelo não apontou como falsa. Mas, sempre verifique suas informações em agências de checagem
                         de fatos confiáveis, como {" "}
                         <a href="https://www.aosfatos.org/" target="_blank" rel="noopener noreferrer">
                             Agência aos Fatos
@@ -200,14 +198,12 @@ const MainPage: React.FC = () => {
             const messageWithoutSource: JSX.Element = 
                 prediction === 0 ? (
                     <>
-                        Ei rapaz, fica esperto! Meu modelo apontou que a notícia enviada é falsa. Mas não tome minha resposta como verdade absoluta
-                        não hein?! Sempre verifique suas informações em agências de checagem de fatos confiáveis, como as que eu disse antes
+                        Ei, abre o olho! Meu modelo apontou que a notícia enviada é falsa. Mas, sempre verifique suas informações em agências de checagem de fatos confiáveis, como as que eu te indiquei antes!
                     </>
                 ) : (
                     <>
-                        Rapaz a notícia enviada pode ser verdadeira viu? Meu modelo não apontou como falsa. Mas, eu não sou
-                        dono da razão não hein?! Sempre verifique suas informações em agências de checagem de fatos confiáveis, 
-                        como as que eu disse antes
+                        A notícia enviada pode ser verdadeira viu? Meu modelo não apontou como falsa. Mas, sempre verifique suas informações em agências de checagem de fatos confiáveis, 
+                        como as que eu te indiquei antes!
                     </>
                 );
 
