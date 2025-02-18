@@ -149,8 +149,9 @@ const MainPage: React.FC = () => {
 
         try {
             const response = await axios.post("https://back-end-chat-production-9b90.up.railway.app/predict", { text: texto });
-            const prediction = response.data.result;
-
+            const prediction = response.data.prediction[0];
+            console.log(response)
+            console.log(prediction)
             const messageWithSource: JSX.Element =
                 prediction === 0 ? (
                     <>
@@ -220,7 +221,6 @@ const MainPage: React.FC = () => {
             console.error("Text value:", text);
             await handleTypingEffect(<>Ocorreu um erro ao tentar classificar a notícia. Tente novamente mais tarde.</>);
         } finally {
-            console.log(messages)
             setIsLoading(false);
         }
     };
